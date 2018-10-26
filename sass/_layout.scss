@@ -9,53 +9,55 @@
     min-height: 92rem;
     border-bottom: 4px solid $color-secondary;
     position: relative;
-    z-index: 100;
+    padding-top: 1.7rem;
 
-    &::before {
-        content: '';
-        width: 100%;
-        height: 27.8%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background: url('../img/bg_header-top.png') no-repeat top center;
-        background-size: cover;
-        z-index: 200;
+    @media only screen and (max-width: 56.75em) {
+        min-height: 87rem;
+    }
 
-        @media only screen and (min-width: 100em) {
-            padding-top: 288px;
-        }
-        @media only screen and (min-width: 106.25em) {
-            padding-top: 305px;
-        }
+    @media only screen and (max-width: 37.5em) {
+        min-height: 75rem;
+        padding-bottom: 12rem;
     }
 
     &__info {
-        padding-top: 25rem;
         text-align: center;
+        width: 100%;      
 
-        @media only screen and (min-width: 87.5em) {
-            padding-top: 26rem;
+        &:before {
+            content: '';
+            position: absolute;
+            top: 18.8rem;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('../img/bg_shadow.png') no-repeat top center;
+            z-index: 3;
         }
-        @media only screen and (min-width: 93.75em) {
-            padding-top: 27.5rem;
-        }
-        @media only screen and (min-width: 100em) {
-            padding-top: 28.5rem;
-        }
-        @media only screen and (min-width: 106.25em) {
-            padding-top: 30rem;
-        }
+        
+    }
+
+    &__logo {
+        width: 100%;
+        height: 20.2rem;
+        padding-top: 3.3rem;
+        background: url('../img/bg_logo.png') no-repeat top center;
+        position: relative;
+        z-index: 5;
+
     }
 
     &__title {
         margin: 0 auto;
-        margin-top: 5rem;
+        margin-top: 4rem;
+        padding: 0 1.5rem;
         color: $color-white;
         font-size: 6.8rem;
         font-family: 'Helveticaneuecyrblack';
         color: $color-grey;
         text-shadow: 0px 0px 6px rgba(31, 88, 0, 0.75);
+        position: relative;
+        z-index: 5;
 
         @media only screen and (max-width: 56.75em) {
             font-size: 5rem;
@@ -63,9 +65,10 @@
 
         @media only screen and (max-width: 37.5em) {
             font-size: 4rem;
+            margin-top: 1rem;
         }
 
-        @media only screen and (max-width: 25em) { // bp 400px
+        @media only screen and (max-width: 30em) { // bp 480px
             font-size: 3rem;
         }
     }
@@ -111,31 +114,38 @@
         padding-top: 1.2rem;
         padding-bottom: 2.4rem;
   
-        @media only screen and (max-width: 26.8em) { // bp 400px
-            width: 90%;
+        @media only screen and (max-width: 37.5em) { // bp 400px
+            width: 100%;
         }
     }
 }
 
 .main-footer {
+    overflow: hidden;
 
     &__navigation {
-
+        
         &__list {
             display: flex;
             justify-content: center;
             list-style: none;
+            flex-wrap: wrap;
+            padding: 2.2rem 1rem;
             
+            @media only screen and (max-width: 37.5em) {
+                margin-right: -3.5rem;
+            }
         }
 
         &__item {
-            padding: 2.2rem 0;
+
+            @media only screen and (max-width: 37.5em) {
+                margin-right: 3.5rem;
+            }
+
             &:not(:last-child) {
                 margin-right: 3.5rem;
 
-                @media only screen and (max-width: 30em) { // bp 480px
-                    margin-right: 1.5rem;
-                }
             }
         }
 
@@ -145,10 +155,6 @@
             font-size: 1.9rem;
             text-transform: uppercase;
             color: #7b7b7b;
-
-            @media only screen and (max-width: 30em) { // bp 480px
-                font-size: 1.6rem;
-            }
 
             &:hover {
                 color: $color-primary-light;
@@ -164,7 +170,189 @@
     &__text {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         font-size: 1.2rem;
         color: $color-grey-3;
+
+        @media only screen and (max-width: 30em) { // bp 480px
+            width: 80%;
+            margin: 0 auto;
+            justify-content: center;
+        }
     }
+}
+
+// MENU
+
+.menu {
+    display: none;
+    
+    @media only screen and (max-width: 37.5em) {
+        display: block;
+        width: 100%;
+    }
+
+    &__checkbox {
+        display: none;
+    }
+
+    &__background {
+        height: 100%;
+        width: 0rem;
+        position: fixed;
+        top: 0rem;
+        right: 0rem;
+        background: linear-gradient(to right, rgba(95,173,0,1) 0%, rgba(61,130,2,1) 100%);
+        z-index: 500;
+        transition: width .8s ease; 
+    }
+
+    &__nav {
+        position: fixed;
+        top: 50%;
+        right: 0;
+        z-index: 500;
+        width: 100%;
+        opacity: 0;
+        transition: all .5s;
+        transform: translateY(-50%);
+        visibility: hidden;
+
+    }
+
+    &__list {
+        position: relative;
+        list-style: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    &__link {
+        display: inline-block;
+        font-family: 'Nimbussantconboldregular';
+        font-size: 3rem;
+        padding: 1rem 2rem;
+        color: $color-white;
+        text-decoration: none;
+        text-transform: uppercase;
+        
+        &:hover {
+            color: $color-secondary;
+            font-weight: 700;
+        }
+    }
+
+
+    //FUNCTIONALITY
+    &__checkbox:checked ~ &__background {
+        width: 100%;
+    }
+
+    &__checkbox:checked ~ &__nav {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    // MENU TOGGLE
+
+    &__btn-humburger {
+
+        z-index: 1000;
+        color: $color-primary-medium;
+        display: block;
+        position: fixed;
+        top: 1rem;
+        right: 1rem;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        
+        width: 5rem;
+        height: 5rem;
+        
+        font-size: 0;
+        text-indent: -9999px;
+        -webkit-appearance: none;
+            -moz-appearance: none;
+                appearance: none;
+        box-shadow: none;
+        border-radius: 50%;
+        background-color: $color-white;
+        
+        cursor: pointer;
+        -webkit-transition: background 0.3s;
+        transition: background 0.3s;
+
+
+    }
+
+    &__icon {
+        display: block;
+        position: absolute;
+        top: 25px;
+        left: 10px;
+        right: 10px;
+
+        height: 3px;
+        background: $color-primary-medium;
+        -webkit-transition: background 0s 0.3s;
+        transition: background 0s 0.3s;
+
+        &::before,
+        &::after {
+            position: absolute;
+            display: block;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: $color-primary-medium;
+            content: "";
+            -webkit-transition-duration: 0.3s, 0.3s;
+                    transition-duration: 0.3s, 0.3s;
+            -webkit-transition-delay: 0.3s, 0s;
+                    transition-delay: 0.3s, 0s;
+        }
+
+        &::before {
+            top: -10px;
+            -webkit-transition-property: top, transform;
+                    transition-property: top, transform;
+        }
+
+        &::after {
+            bottom: -10px;
+            -webkit-transition-property: bottom, transform;
+            transition-property: bottom, transform;
+        }
+
+    }
+
+    // OPEN MENU
+    &__checkbox:checked + &__btn-humburger {
+        background: transparent;
+    }
+
+    &__checkbox:checked + &__btn-humburger &__icon {
+        background: none;
+    }
+
+    &__checkbox:checked + &__btn-humburger &__icon::before,
+    &__checkbox:checked + &__btn-humburger &__icon::after {
+        background-color: $color-white;
+        -webkit-transition-delay: 0s, 0.3s;
+                transition-delay: 0s, 0.3s;
+    }
+
+    &__checkbox:checked + &__btn-humburger &__icon::before {
+        top: 0;
+        -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+    }
+
+    &__checkbox:checked + &__btn-humburger &__icon::after {
+        bottom: 0;
+        -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+    }
+
 }

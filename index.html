@@ -9,9 +9,14 @@
     <title>Nursery Supply Co</title>
 </head>
 <body>
+    
+
     <header class="main-header">
         <div class="container">
             <div class="main-header__info">
+                <div class="main-header__logo">
+                    <img src="img/logo.png" alt="">
+                </div>
                 <nav class="navigation">
                     <ul class="navigation__list">
                         <li class="navigation__item">
@@ -58,74 +63,111 @@
         </div>
     </header>
 
-    <section class="categories">
-        <div class="">
-            <div class="category container">
-                <div class="category__row">
-                    <div class="category__item">
-                        <div class="category__img">
-                            <img src="img/category-1.jpg" alt="">
-                        </div>
-                        <p class="category__name">
-                            Potting Soil
-                        </p>
-                        <a href="#" class="btn btn__category">Learn More</a>
-                    </div>
-                    <div class="category__item">
-                        <div class="category__img">
-                            <img src="img/category-2.jpg" alt="">
-                        </div>
-                        <p class="category__name">
-                            Peat Moss
-                        </p>
-                        <a href="#" class="btn btn__category">Learn More</a>
-                    </div>
-                    <div class="category__item">
-                        <div class="category__img">
-                            <img src="img/category-3.jpg" alt="">
-                        </div>
-                        <p class="category__name">
-                            Fertilizers
-                        </p>
-                        <a href="#" class="btn btn__category">Learn More</a>
-                    </div>
-                </div>
-                <div class="category__row">
-                    <div class="category__item">
-                        <div class="category__img">
-                            <img src="img/category-4.jpg" alt="">
-                        </div>
-                        <p class="category__name">
-                            Mulch
-                        </p>
-                        <a href="#" class="btn btn__category">Learn More</a>
-                    </div>
-                    <div class="category__item">
-                        <div class="category__img">
-                            <img src="img/category-5.jpg" alt="">
-                        </div>
-                        <p class="category__name">
-                            Compost
-                        </p>
-                        <a href="#" class="btn btn__category">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- MENU HAMBURGER -->
 
-    <section class="info">
-        <div class="container">
-            <h3 class="info__title">
-                Community
-                <span class="info__title--bold">Benefits</span>
-            </h3>
-            <p class="info__text">
-                Nursery Supply Co., LLC Fundraising is dedicated to helping organizations of all types fund their needs and efforts. Our fundraisers have helped sports teams purchase new uniforms, youth groups fund mission trips, scout troops pay for camping equipment and neighborhood organizations pay for landscaping. The sky is the limit on profit dollars your organization can generate with a mulch and/or bulb fundraiser from Nursery Supply Co., LLC.
-            </p>
-            <a href="#" class="btn btn__info">Learn More</a>
-        </div>
-    </section>
+    <div class="menu">
+        <input type="checkbox" class="menu__checkbox" id="menu-toggle">
+
+        <label for="menu-toggle" class="menu__btn-humburger">
+                <span class="menu__icon">&#9776;</span>
+        </label>
+
+        <div class="menu__background">&nbsp;</div>
+
+        <nav class="menu__nav">
+            <ul class="menu__list">
+                <li class="menu__item">
+                    <a href="#" class="menu__link">Home</a>
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="menu__link">Mulch Supplier</a>
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="menu__link">Soils</a>
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="menu__link">Mulch Fundraisers</a>
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="menu__link">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+        
+    </div>
+
+
+    <main>
+        <section class="categories">
+            <div class="category container">
+                
+                <div class="category__item">
+                    <div class="category__img">
+                        <img src="img/category-1.jpg" alt="">
+                    </div>
+                    <p class="category__name">
+                        Potting Soil
+                    </p>
+                    <a href="#" class="btn btn__category">Learn More</a>
+                </div>
+                <div class="category__item">
+                    <div class="category__img">
+                        <img src="img/category-2.jpg" alt="">
+                    </div>
+                    <p class="category__name">
+                        Peat Moss
+                    </p>
+                    <a href="#" class="btn btn__category">Learn More</a>
+                </div>
+                <div class="category__item">
+                    <div class="category__img">
+                        <img src="img/category-3.jpg" alt="">
+                    </div>
+                    <p class="category__name">
+                        Fertilizers
+                    </p>
+                    <a href="#" class="btn btn__category">Learn More</a>
+                </div>
+                
+                <div class="category__item">
+                    <div class="category__img">
+                        <img src="img/category-4.jpg" alt="">
+                    </div>
+                    <p class="category__name">
+                        Mulch
+                    </p>
+                    <a href="#" class="btn btn__category">Learn More</a>
+                </div>
+                <div class="category__item">
+                    <div class="category__img">
+                        <img src="img/category-5.jpg" alt="">
+                    </div>
+                    <p class="category__name">
+                        Compost
+                    </p>
+                    <a href="#" class="btn btn__category">Learn More</a>
+                </div>
+                
+            </div>
+
+        </section>
+
+        <section class="info">
+            <div class="container">
+                <h3 class="info__title">
+                    Community
+                    <span class="info__title--bold">Benefits</span>
+                </h3>
+                <p class="info__text">
+                    Nursery Supply Co., LLC Fundraising is dedicated to helping organizations of all types fund their needs and efforts. Our fundraisers have helped sports teams purchase new uniforms, youth groups fund mission trips, scout troops pay for camping equipment and neighborhood organizations pay for landscaping. The sky is the limit on profit dollars your organization can generate with a mulch and/or bulb fundraiser from Nursery Supply Co., LLC.
+                </p>
+                <a href="#" class="btn btn__info">Learn More</a>
+            </div>
+        </section>
+
+    </main>
+
+    
 
     <footer class="main-footer">
         <nav class="main-footer__navigation">
@@ -160,10 +202,10 @@
         <div class="copyright">
             <div class="container">
                 <div class="copyright__text">
-                    <p class="">
+                    <p>
                         &copy; Nursery Supply Co. All rights reserved.
                     </p>
-                    <p class="">
+                    <p>
                         Development by Nursery Supply Co. 2016
                     </p>
                 </div>

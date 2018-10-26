@@ -23,11 +23,6 @@ $color-white: #fff;
 html {
     box-sizing: border-box;
     font-size: 62.5%; // 1rem = 10px
-
-    @media only screen and (max-width: 37.5em) {
-        font-size: 50%; // 1rem = 8px
-    }
-
 }
 
 body {
@@ -35,7 +30,4 @@ body {
     font-size: 1.4rem;
     font-weight: 400;
     position: relative;
-    max-width: 1800px;
-    margin: 0 auto;
-    
 }
